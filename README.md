@@ -48,10 +48,14 @@ Permite variar independentemente a estrutura do laudo e o seu formato de saída.
 
 ### Requisito R5 - Adicionar as regras de validação de cada exame, de maneira extensível. A validação do Hemograma só analisa se os valores medidos não excedem 50% do valor máximo e do valor mínimo. Por exemplo, se para Hemoglobina os valores de referência são de 13.0 a 18.0 milhões/dl, os extremos não podem exceder 6.5 e 27 milhões/dl. No caso de uma ressonância magnética, há diferentes regras de validação que devem ser verificadas, não importando a ordem, como: (a) verificar a presença de implantes gerais.
 
-**Padrões de Projeto Aplicados:** Strategy + Chain of Responsibility
+**Padrão de Projeto Aplicado:** Chain of Responsibility
 
 **Como será utilizado:**  
-O Strategy será utilizado para permitir selecionar uma estratégia de validação conforme o tipo de exame. A Chain of Responsibility será usada internamente à estratégia, permitindo que múltiplas validações sejam aplicadas em sequência (como implantes, metais, etc.).
+Cada regra de validação (como limites de hemograma, presença de implantes, detecção de metais, entre outros) será encapsulada em uma classe que implementa a interface `Validador`. Essas classes serão organizadas em uma cadeia de responsabilidade, onde cada validador executa sua regra e, se aplicável, repassa o controle para o próximo na cadeia.
+
+**Justificativa:**  
+O padrão Chain of Responsibility permite criar uma sequência flexível e desacoplada de verificações. Isso facilita a adição, remoção ou reorganização de regras de validação sem impactar o restante do código, promovendo extensibilidade e modularidade.
+
 
 **Justificativa:**  
 Facilita a criação de regras modulares e reutilizáveis, permitindo encadear validações específicas sem alterar o fluxo geral do sistema.
@@ -81,6 +85,19 @@ A lógica de aplicação de desconto será encapsulada em objetos que implementa
 Oferece flexibilidade e reutilização ao separar regras de negócio de desconto em componentes independentes.
 
 ---
+
+
+### Requisito R8 - Implementar a solução de priorização de exames usando fila de prioridade. As regras já foram indicadas anteriormente e considerar-se-á as prioridades URGENTE, POUCO URGENTE e ROTINA.
+
+**Padrão de Projeto Aplicado:** Priority Queue
+
+**Como será utilizado:**  
+Os exames serão armazenados em uma fila de prioridade que organiza automaticamente a ordem de processamento com base na prioridade associada a cada exame (Urgente, Pouco Urgente, Rotina). A fila garante que exames mais urgentes sejam processados primeiro, simplificando a lógica de controle e evitando condicionais complexas.
+
+**Justificativa:**  
+A fila de prioridade oferece uma maneira eficiente e natural de gerenciar o atendimento dos exames conforme sua urgência, centralizando a lógica de ordenação e facilitando a manutenção, evolução e legibilidade do código.
+
+## ou
 
 ### Requisito R8 - Implementar a solução de priorização de exames usando fila de prioridade. As regras já foram indicadas anteriormente e considerar-se-á as prioridades URGENTE, POUCO URGENTE e ROTINA.
 
