@@ -10,7 +10,7 @@ A arquitetura do sistema foi construída com base em diversos padrões de projet
 
 ## Requisitos Funcionais e Padrões Aplicados
 
-### Requisito R2 - Gerar o número sequencial do exame, sem repetição
+## Requisito R2 - Gerar o número sequencial do exame, sem repetição
 
 **Padrão de Projeto Aplicado:** Singleton
 
@@ -22,7 +22,7 @@ Garante unicidade na geração dos números de exame, evitando conflitos, duplic
 
 ---
 
-### Requisito R3 - Emitir laudo dos seguintes exames: Hemograma, Ultrassonografia e Ressonância Magnética. Outros tipos de exames poderão surgir no futuro, como por exemplo a Tomografia. Os novos tipos de exames a serem adicionados não devem impactar o funcionamento do código já existente.
+## Requisito R3 - Emitir laudo dos seguintes exames: Hemograma, Ultrassonografia e Ressonância Magnética. Outros tipos de exames poderão surgir no futuro, como por exemplo a Tomografia. Os novos tipos de exames a serem adicionados não devem impactar o funcionamento do código já existente.
 
 **Padrão de Projeto Aplicado:** Factory Method
 
@@ -34,7 +34,7 @@ Desacopla a criação dos tipos de exame, facilitando a inclusão de novos exame
 
 ---
 
-### Requisito R4 - Gerar laudos para diferentes exames, inicialmente nos formatos texto, HTML e PDF. Outros tipos de formato poderão surgir no futuro, como por exemplo o JSON. Os novos formatos de exames a serem adicionados não devem impactar o funcionamento do código já existente. Qualquer tipo de laudo deve ser gerado em seu formato específico, inclusive em PDF (utilize a API de sua preferência)
+## Requisito R4 - Gerar laudos para diferentes exames, inicialmente nos formatos texto, HTML e PDF. Outros tipos de formato poderão surgir no futuro, como por exemplo o JSON. Os novos formatos de exames a serem adicionados não devem impactar o funcionamento do código já existente. Qualquer tipo de laudo deve ser gerado em seu formato específico, inclusive em PDF (utilize a API de sua preferência)
 
 **Padrão de Projeto Aplicado:** Bridge
 
@@ -46,7 +46,7 @@ Permite variar independentemente a estrutura do laudo e o seu formato de saída.
 
 ---
 
-### Requisito R5 - Adicionar as regras de validação de cada exame, de maneira extensível. A validação do Hemograma só analisa se os valores medidos não excedem 50% do valor máximo e do valor mínimo. Por exemplo, se para Hemoglobina os valores de referência são de 13.0 a 18.0 milhões/dl, os extremos não podem exceder 6.5 e 27 milhões/dl. No caso de uma ressonância magnética, há diferentes regras de validação que devem ser verificadas, não importando a ordem, como: (a) verificar a presença de implantes gerais.
+## Requisito R5 - Adicionar as regras de validação de cada exame, de maneira extensível. A validação do Hemograma só analisa se os valores medidos não excedem 50% do valor máximo e do valor mínimo. Por exemplo, se para Hemoglobina os valores de referência são de 13.0 a 18.0 milhões/dl, os extremos não podem exceder 6.5 e 27 milhões/dl. No caso de uma ressonância magnética, há diferentes regras de validação que devem ser verificadas, não importando a ordem, como: (a) verificar a presença de implantes gerais.
 
 **Padrão de Projeto Aplicado:** Chain of Responsibility
 
@@ -62,7 +62,7 @@ Facilita a criação de regras modulares e reutilizáveis, permitindo encadear v
 
 ---
 
-### Requisito R6 - Notificar o paciente quando um laudo for emitido (inserido no sistema), por WhatsApp. Outros mecanismos de notificação serão adicionados futuramente (e.g. SMS ou E-mail) e não devem impactar o funcionamento do código já existente. Qualquer tipo de notificação deve ser gerado de maneira real.
+## Requisito R6 - Notificar o paciente quando um laudo for emitido (inserido no sistema), por WhatsApp. Outros mecanismos de notificação serão adicionados futuramente (e.g. SMS ou E-mail) e não devem impactar o funcionamento do código já existente. Qualquer tipo de notificação deve ser gerado de maneira real.
 
 **Padrão de Projeto Aplicado:** Observer
 
@@ -74,7 +74,7 @@ Permite adicionar novos canais de notificação sem modificar a lógica do siste
 
 ---
 
-### Requisito R7 - O sistema deve permitir a realização de descontos para o custo de exames conforme política definida pelo laboratório. Inicialmente, serão concedidos descontos para convênio (15%) e desconto para idoso (8%). Outros tipos de descontos poderão surgir no futuro, como por exemplo, no mês de campanha do “Outubro Rosa” (prevenção de câncer de mama). Os novos tipos de exames a serem adicionados não devem impactar o funcionamento do código já existente.
+## Requisito R7 - O sistema deve permitir a realização de descontos para o custo de exames conforme política definida pelo laboratório. Inicialmente, serão concedidos descontos para convênio (15%) e desconto para idoso (8%). Outros tipos de descontos poderão surgir no futuro, como por exemplo, no mês de campanha do “Outubro Rosa” (prevenção de câncer de mama). Os novos tipos de exames a serem adicionados não devem impactar o funcionamento do código já existente.
 
 **Padrão de Projeto Aplicado:** Strategy
 
@@ -87,7 +87,7 @@ Oferece flexibilidade e reutilização ao separar regras de negócio de desconto
 ---
 
 
-### Requisito R8 - Implementar a solução de priorização de exames usando fila de prioridade. As regras já foram indicadas anteriormente e considerar-se-á as prioridades URGENTE, POUCO URGENTE e ROTINA.
+## Requisito R8 - Implementar a solução de priorização de exames usando fila de prioridade. As regras já foram indicadas anteriormente e considerar-se-á as prioridades URGENTE, POUCO URGENTE e ROTINA.
 
 **Padrão de Projeto Aplicado:** Priority Queue
 
@@ -97,7 +97,7 @@ Os exames serão armazenados em uma fila de prioridade que organiza automaticame
 **Justificativa:**  
 A fila de prioridade oferece uma maneira eficiente e natural de gerenciar o atendimento dos exames conforme sua urgência, centralizando a lógica de ordenação e facilitando a manutenção, evolução e legibilidade do código.
 
-## ou
+### ou
 
 ### Requisito R8 - Implementar a solução de priorização de exames usando fila de prioridade. As regras já foram indicadas anteriormente e considerar-se-á as prioridades URGENTE, POUCO URGENTE e ROTINA.
 
@@ -111,7 +111,7 @@ Evita uso de condicionais espalhadas no código e centraliza o comportamento por
 
 ---
 
-### Requisito R9 - Implementar o programa principal que simule a execução da aplicação e atendimento de todos os requisitos funcionais.
+## Requisito R9 - Implementar o programa principal que simule a execução da aplicação e atendimento de todos os requisitos funcionais.
 
 **Padrão de Projeto Aplicado:** Facade
 
@@ -123,7 +123,7 @@ Reduz a complexidade de uso do sistema, facilitando a integração com outras ca
 
 ---
 
-### Requisito R10 - Gerenciamento de versões das observações médicas em um exame
+## Requisito R10 - Gerenciamento de versões das observações médicas em um exame
 
 **Descrição do Requisito:**  
 Durante a elaboração de um laudo, o sistema deve permitir que médicos adicionem ou editem observações clínicas sobre o exame. Para garantir segurança e controle de versões, o sistema deve armazenar automaticamente o histórico dessas observações. O médico deve ser capaz de desfazer alterações e restaurar versões anteriores das observações antes da emissão final do laudo.
