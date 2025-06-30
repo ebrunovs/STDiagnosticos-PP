@@ -11,140 +11,133 @@ A arquitetura do sistema foi construída com base em diversos padrões de projet
 ## Diagrama de Classes
 ![Diagrama UML](https://uml.planttext.com/plantuml/png/lLZ9RkGs4BttLn1pcMwCDHyW9COuNYODU8kNvD90m9ReDX6952ZAiJCpNvD3FY389LV_M8eKLpNbbf59V33KLQ-AjQke3wt4GdPrDPEyGPAZDPUIrwYaWXIISZQRlVtsXR_PMtHDsQOYahCSVIG2broWag3bKRj3ii75BtX3q1kdOCNcWORpvxzh8lZY3VeqGwYeSDlQ0yuxnJb-n3NHJ8Go18v8MY3Au84L94zW3P9foe7iS9K3NchoExGXScc4vujHSOKJs90LhbVmPVPbTwHES26vU49dHDxpCaTQw-GmnT8GgrxSn0UlMoa0OG8LnmPqKC8a1ENIF1bV1C4L_GqB3LVUF71QQdTSoBydDTy8N6D7kQtWfBRbJD7lg6TS4KM5008DY4uIPLsJVTv7Def31KD-e2TcZVXf8_F9U5K86hXajQPyCfAx1CSyVwLuuDUAdU4D8r2nhz0JnjJw7CR7q18HVXczowwa6CX5mSyocwK9dV2TeEK6ol4KToLl4K5tNDHOyidDq2k09j0Q86OdlO9qD_GWsmtchDpAQAxX4UM1ZxaYyNLBn0CkC4XSk6V3V83-ATMSoD6FzZ6kDQrznNmpa4T9M6aOGvXB73QjyI8wdRY130Z1Z2BY3XSaSjdrYvveXnn0G4rFWSkZ4zyzDsUdxiSD7ARF00HwtpNleKu6SLNu4PQMJl96aXYskZ5Sq-TXulPMJ6KjJ9SYfNArC3KuUo5ZAnRqvrS-T4Vw_yUZqxNqNne06aT3ZRAI_yhKq0dJxYL60xLBS8UR8-9Mtg9ubWrBEUBtMlmRBScCXaaIuQA6SX_C9QDWV3Lbp1xUOmgPkLCJlk6ifMjQKVaqTSYEYCFKxGrx_kFvTpjn_OZnHjlvqfikveeAHNA66wY2DUSLmSn0MY8l1N-aDP-FLCtsJEgv4BwWW5BCmLgI4hCZA9pXQGtRI0TLBcU3h3MzKrEIrPS30RVFkQHtK9KGtx-cxuTM7j8JAzZAa2cyC4NCI8XvJLWB-keSNKi1ctaoz3_TOzaUDCsAsQD0sUjqMLNNTViLj1pNc5R_GW_yI_faq-r31iYXoKdGjaK9c7-_chtS9GINqELGSyAZv-68LKqHxYp0EQMj_4PFd7t3gVHwPJXwmknRRzs1QfH5XZjE5WomYEW6-Cwh8GnfIJPFEJeYRG4BnlG5puf2DJlPhKAs70lsDm1S5Ls5XGMeeQ86IicxTKKMzY4kQWjUCTY57WYZFC5QGa3rThADjlaTMXM1jVmeqjUpYhjbkysr7E3pr5cwUffAbVn4z-F3L44arFOtIbSJ5X5n4dVc2LLoAIWNy5v1FtIaWvNYX5PuQfd4ib0iIbXzFOWkntrC5Ml5UWcOpu3kGTizrz-zeWq79hcLov7NiJ2YV0qrQTzWmqiROLqTo9ZpRgy-7f_V7EldoulRmukVGyhLnSto_C1g63KzxD5HaCge9q_yKg4TNRfMW-l2DKmHKazEJQz3Nz7M7Che-Kym8Kg8OO1TN2zWFZQm472eO2fjBhQ_OEmXIPk-o7RaQC_rpNQ_BCAxtZj4QYffQi5DNnhTCclIb7B8PIXSHTCmzt5cGeRE2BpEfB-IlcvNCDAGd4WyoevVJztyaUgwPb-VuSSAeqzLlXSpHFUfgPMu4-ezd00jub7i-R2azmXdXD9J3gtO47ciwSe4nma_-K3nGi0BK9XmhDTftvHRrktReiJL0rHaVz2O6v6p1aiPZ1QYFnQEX4YR6bYMHHS45mLrdKvw4hp61_Y1qgIughWFX9NgG_0_)
 
+# Requisitos Funcionais e Padrões Aplicados
 
 ---
-
-## Requisitos Funcionais e Padrões Aplicados
 
 ## Requisito R2 - Gerar o número sequencial do exame, sem repetição
 
 **Padrão de Projeto Aplicado:** Singleton
 
 **Como será utilizado:**  
-Será criada uma classe `GeradorSequencial` que encapsula a lógica de geração de identificadores únicos. Essa classe seguirá o padrão Singleton, garantindo que apenas uma instância exista em toda a aplicação.
+Será criada a classe `GeradorSequencial`, responsável pela lógica de geração de identificadores únicos. Essa classe seguirá o padrão Singleton, garantindo que apenas uma instância exista durante toda a execução da aplicação.
 
 **Justificativa:**  
 Garante unicidade na geração dos números de exame, evitando conflitos, duplicações ou inconsistências, especialmente em ambientes concorrentes.
 
 ---
 
-## Requisito R3 - Emitir laudo dos seguintes exames: Hemograma, Ultrassonografia e Ressonância Magnética. Outros tipos de exames poderão surgir no futuro, como por exemplo a Tomografia. Os novos tipos de exames a serem adicionados não devem impactar o funcionamento do código já existente.
+## Requisito R3 - Emitir laudo dos seguintes exames: Hemograma, Ultrassonografia e Ressonância Magnética. Outros tipos poderão ser adicionados futuramente, como Tomografia, sem impacto no código já existente.
 
 **Padrão de Projeto Aplicado:** Factory Method
 
 **Como será utilizado:**  
-Cada tipo de exame terá sua própria implementação e será criado por meio de fábricas específicas que herdam de uma interface comum. O sistema usará essas fábricas para instanciar os objetos corretos sem depender das classes concretas.
+Cada tipo de exame terá sua própria implementação e será instanciado por fábricas concretas que herdam de uma interface comum, `ExameFactory`. O sistema chamará os métodos da fábrica sem conhecer as classes concretas dos exames, como `Hemograma`, `Ultrassonografia`, etc.
 
 **Justificativa:**  
-Desacopla a criação dos tipos de exame, facilitando a inclusão de novos exames sem a necessidade de alterar código existente, respeitando o princípio Open/Closed (aberto para extensão, fechado para modificação).
+Desacopla a lógica de criação dos objetos, permitindo adicionar novos tipos de exame sem modificar o código existente. Atende ao princípio Open/Closed (aberto para extensão, fechado para modificação).
 
 ---
 
-## Requisito R4 - Gerar laudos para diferentes exames, inicialmente nos formatos texto, HTML e PDF. Outros tipos de formato poderão surgir no futuro, como por exemplo o JSON. Os novos formatos de exames a serem adicionados não devem impactar o funcionamento do código já existente. Qualquer tipo de laudo deve ser gerado em seu formato específico, inclusive em PDF (utilize a API de sua preferência)
+## Requisito R4 - Gerar laudos em diferentes formatos: Texto, HTML e PDF. Novos formatos, como JSON, poderão ser adicionados sem afetar o código existente.
 
 **Padrão de Projeto Aplicado:** Bridge
 
 **Como será utilizado:**  
-Será criado um desacoplamento entre a abstração `Laudo` e as implementações de formato (`FormatoPDF`, `FormatoHTML`, `FormatoTexto`). O laudo utilizará uma referência a um objeto que implementa a interface `Formato`.
+Será criada a abstração `Laudo`, que conterá uma referência a um objeto da interface `Formato`. As classes concretas de formato (`FormatoPDF`, `FormatoHTML`, `FormatoTexto`) implementarão a lógica de geração no formato específico.
 
 **Justificativa:**  
-Permite variar independentemente a estrutura do laudo e o seu formato de saída. Facilita a extensão futura com novos formatos sem modificar as abstrações já existentes.
+Permite variar independentemente o conteúdo dos laudos e seu formato de saída. Facilita a adição de novos formatos sem alteração nas abstrações principais.
 
 ---
 
-## Requisito R5 - Adicionar as regras de validação de cada exame, de maneira extensível. A validação do Hemograma só analisa se os valores medidos não excedem 50% do valor máximo e do valor mínimo. Por exemplo, se para Hemoglobina os valores de referência são de 13.0 a 18.0 milhões/dl, os extremos não podem exceder 6.5 e 27 milhões/dl. No caso de uma ressonância magnética, há diferentes regras de validação que devem ser verificadas, não importando a ordem, como: (a) verificar a presença de implantes gerais.
+## Requisito R5 - Adicionar regras de validação específicas para cada tipo de exame, de forma extensível.
 
 **Padrão de Projeto Aplicado:** Chain of Responsibility
 
 **Como será utilizado:**  
-Cada regra de validação (como limites de hemograma, presença de implantes, detecção de metais, entre outros) será encapsulada em uma classe que implementa a interface `Validador`. Essas classes serão organizadas em uma cadeia de responsabilidade, onde cada validador executa sua regra e, se aplicável, repassa o controle para o próximo na cadeia.
+Cada regra de validação será encapsulada em uma classe que implementa a interface `Validador`. Esses validadores serão encadeados em uma cadeia, permitindo que cada um execute sua verificação e repasse o controle ao próximo.
 
 **Justificativa:**  
-O padrão Chain of Responsibility permite criar uma sequência flexível e desacoplada de verificações. Isso facilita a adição, remoção ou reorganização de regras de validação sem impactar o restante do código, promovendo extensibilidade e modularidade.
-
-
-**Justificativa:**  
-Facilita a criação de regras modulares e reutilizáveis, permitindo encadear validações específicas sem alterar o fluxo geral do sistema.
+Permite uma estrutura modular e flexível para validações. Novas regras podem ser adicionadas, removidas ou reorganizadas sem impactar o fluxo principal ou os validadores existentes.
 
 ---
 
-## Requisito R6 - Notificar o paciente quando um laudo for emitido (inserido no sistema), por WhatsApp. Outros mecanismos de notificação serão adicionados futuramente (e.g. SMS ou E-mail) e não devem impactar o funcionamento do código já existente. Qualquer tipo de notificação deve ser gerado de maneira real.
+## Requisito R6 - Notificar o paciente por WhatsApp quando um laudo for emitido. Novos canais, como SMS ou E-mail, podem ser adicionados sem impacto no funcionamento atual.
 
 **Padrão de Projeto Aplicado:** Observer
 
 **Como será utilizado:**  
-A classe `EmissorDeLaudo` funcionará como o sujeito (subject), enquanto `Paciente`, `NotificadorWhatsApp`, `NotificadorEmail`, entre outros, agirão como observadores. Assim que um laudo for emitido, todos os observadores serão notificados automaticamente.
+A classe `EmissorDeLaudo` atuará como sujeito (Subject), notificando observadores como `NotificadorWhatsApp`, `NotificadorEmail`, entre outros. Ao emitir um laudo, todos os observadores registrados são automaticamente notificados.
 
 **Justificativa:**  
-Permite adicionar novos canais de notificação sem modificar a lógica do sistema emissor, promovendo extensibilidade e baixo acoplamento.
+Facilita a adição de novos mecanismos de notificação sem alterar a lógica de emissão, promovendo baixo acoplamento e alta extensibilidade.
 
 ---
 
-## Requisito R7 - O sistema deve permitir a realização de descontos para o custo de exames conforme política definida pelo laboratório. Inicialmente, serão concedidos descontos para convênio (15%) e desconto para idoso (8%). Outros tipos de descontos poderão surgir no futuro, como por exemplo, no mês de campanha do “Outubro Rosa” (prevenção de câncer de mama). Os novos tipos de exames a serem adicionados não devem impactar o funcionamento do código já existente.
+## Requisito R7 - Aplicar descontos no custo do exame conforme políticas do laboratório.
 
 **Padrão de Projeto Aplicado:** Strategy
 
 **Como será utilizado:**  
-A lógica de aplicação de desconto será encapsulada em objetos que implementam a interface `Desconto`, como `DescontoIdoso`, `DescontoConvenio`. O sistema aplicará dinamicamente a estratégia mais adequada para o perfil do paciente.
+A lógica de desconto será encapsulada em classes concretas que implementam a interface `Desconto`, como `DescontoConvenio` e `DescontoIdoso`. A classe responsável aplicará dinamicamente a estratégia adequada com base no perfil do paciente.
 
 **Justificativa:**  
-Oferece flexibilidade e reutilização ao separar regras de negócio de desconto em componentes independentes.
+Encapsula políticas de desconto em componentes independentes e reutilizáveis. Facilita a manutenção e extensão da lógica de negócio sem impactar o sistema principal.
 
 ---
 
+## Requisito R8 - Priorizar exames com base em níveis de urgência: URGENTE, POUCO URGENTE e ROTINA.
 
-## Requisito R8 - Implementar a solução de priorização de exames usando fila de prioridade. As regras já foram indicadas anteriormente e considerar-se-á as prioridades URGENTE, POUCO URGENTE e ROTINA.
+### Opção 1 - Priority Queue
 
 **Padrão de Projeto Aplicado:** Priority Queue
 
 **Como será utilizado:**  
-Os exames serão armazenados em uma fila de prioridade que organiza automaticamente a ordem de processamento com base na prioridade associada a cada exame (Urgente, Pouco Urgente, Rotina). A fila garante que exames mais urgentes sejam processados primeiro, simplificando a lógica de controle e evitando condicionais complexas.
+Exames serão inseridos em uma estrutura de fila de prioridade (`PriorityQueue<Exame>`) com base em sua urgência. A fila garante o atendimento de exames mais críticos primeiro, sem necessidade de lógica condicional dispersa.
 
 **Justificativa:**  
-A fila de prioridade oferece uma maneira eficiente e natural de gerenciar o atendimento dos exames conforme sua urgência, centralizando a lógica de ordenação e facilitando a manutenção, evolução e legibilidade do código.
+Abstrai a ordenação dos exames de acordo com a prioridade, tornando o sistema mais eficiente, legível e de fácil manutenção.
 
-### ou
-
-### Requisito R8 - Implementar a solução de priorização de exames usando fila de prioridade. As regras já foram indicadas anteriormente e considerar-se-á as prioridades URGENTE, POUCO URGENTE e ROTINA.
+### Opção 2 - State
 
 **Padrão de Projeto Aplicado:** State
 
 **Como será utilizado:**  
-Cada exame possuirá um estado que representa sua prioridade atual (`Urgente`, `PoucoUrgente`, `Rotina`). O comportamento do exame no momento do processamento será determinado pelo estado atual.
+Cada exame terá um estado associado (`EstadoPrioridade`) representando sua urgência. A lógica de comportamento durante o processamento dependerá do estado atual: `Urgente`, `PoucoUrgente`, ou `Rotina`.
 
 **Justificativa:**  
-Evita uso de condicionais espalhadas no código e centraliza o comportamento por prioridade, facilitando manutenção e extensão.
+Encapsula comportamentos específicos por prioridade, evitando condicionais espalhadas e centralizando a lógica de decisão.
+
+> 💡 *Escolha entre Priority Queue (quando a preocupação for com ordenação de atendimento) ou State (quando há mudança de comportamento conforme prioridade).*
 
 ---
 
-## Requisito R9 - Implementar o programa principal que simule a execução da aplicação e atendimento de todos os requisitos funcionais.
+## Requisito R9 - Implementar o programa principal que simule a execução da aplicação e os requisitos funcionais.
 
 **Padrão de Projeto Aplicado:** Facade
 
 **Como será utilizado:**  
-A classe `SistemaDeExames` atuará como uma fachada para o sistema, unificando as operações de criação de exames, validações, geração de laudos, notificações e descontos em uma única interface de alto nível.
+A classe `SistemaDeExames` atuará como uma fachada, unificando funcionalidades como criação de exames, aplicação de descontos, geração de laudos e notificações. Outras camadas do sistema (ex: UI ou testes) interagirão apenas com essa classe.
 
 **Justificativa:**  
-Reduz a complexidade de uso do sistema, facilitando a integração com outras camadas, como interfaces gráficas, APIs, ou testes automatizados.
+Fornece uma interface simplificada para operações complexas, reduzindo o acoplamento entre subsistemas e facilitando integrações.
 
 ---
 
-## Requisito R10 - Gerenciamento de versões das observações médicas em um exame
-
-**Descrição do Requisito:**  
-Durante a elaboração de um laudo, o sistema deve permitir que médicos adicionem ou editem observações clínicas sobre o exame. Para garantir segurança e controle de versões, o sistema deve armazenar automaticamente o histórico dessas observações. O médico deve ser capaz de desfazer alterações e restaurar versões anteriores das observações antes da emissão final do laudo.
+## Requisito R10 - Controle de versões das observações médicas nos exames
 
 **Padrão de Projeto Aplicado:** Memento
 
 **Como será utilizado:**  
-A classe `HistoricoLaudo` armazenará versões anteriores das observações do laudo. O sistema permitirá restaurar uma versão anterior a qualquer momento antes da emissão final.
+A classe `HistoricoLaudo` armazenará versões anteriores das observações feitas durante a edição do laudo. A classe `Laudo` poderá restaurar qualquer versão salva antes da finalização.
 
 **Justificativa:**  
-Garante controle de histórico e possibilidade de desfazer ações, essencial em ambientes sensíveis como registros médicos.
+Oferece suporte à reversão de alterações e versionamento, o que é essencial em sistemas sensíveis como laudos médicos.
 
 ---
 
 ## Conclusão
 
-Este projeto demonstrou como o uso de padrões de projeto clássicos pode proporcionar uma arquitetura sólida, modular e preparada para futuras expansões. Cada requisito foi cuidadosamente mapeado a uma solução orientada a objeto, garantindo clareza, reutilização e facilidade de manutenção do código.
+Este projeto demonstra como a aplicação adequada de padrões de projeto proporciona uma arquitetura robusta, extensível e de fácil manutenção. Cada requisito foi implementado com foco em boas práticas de orientação a objetos, favorecendo reutilização, clareza e desacoplamento.
 
