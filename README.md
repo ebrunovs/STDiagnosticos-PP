@@ -109,8 +109,6 @@ Cada exame terá um estado associado (`EstadoPrioridade`) representando sua urg�
 **Justificativa:**  
 Encapsula comportamentos específicos por prioridade, evitando condicionais espalhadas e centralizando a lógica de decisão.
 
-> 💡 *Escolha entre Priority Queue (quando a preocupação for com ordenação de atendimento) ou State (quando há mudança de comportamento conforme prioridade).*
-
 ---
 
 ## Requisito R9 - Implementar o programa principal que simule a execução da aplicação e os requisitos funcionais.
