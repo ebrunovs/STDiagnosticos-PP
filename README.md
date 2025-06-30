@@ -23,6 +23,20 @@ A arquitetura do sistema foi construída com base em diversos padrões de projet
 
 # Requisitos Funcionais e Padrões Aplicados
 
+## Tabela Resumo: Requisitos e Padrões de Projeto
+
+| Requisito | Descrição resumida                                                      | Padrão de Projeto Aplicado |
+|-----------|-------------------------------------------------------------------------|-----------------------------|
+| R2        | Geração de número sequencial único para exames                         | Singleton                   |
+| R3        | Criação de laudos para diferentes tipos de exame                        | Factory Method              |
+| R4        | Geração de laudos em múltiplos formatos (texto, HTML, PDF, etc.)       | Bridge                      |
+| R5        | Validação extensível de exames                                          | Chain of Responsibility     |
+| R6        | Notificação ao paciente (ex: WhatsApp, E-mail)                          | Observer                    |
+| R7        | Aplicação de políticas de desconto (convênio, idoso, etc.)             | Strategy                    |
+| R8        | Priorização de exames por urgência (URGENTE, POUCO URGENTE, ROTINA)    | Priority Queue **ou** State|
+| R9        | Execução centralizada das funcionalidades do sistema                   | Facade                      |
+| R10       | Versionamento das observações do laudo                                  | Memento                     |
+
 ---
 
 ## Requisito R2 - Gerar o número sequencial do exame, sem repetição
