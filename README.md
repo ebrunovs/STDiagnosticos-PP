@@ -2,6 +2,16 @@
 
 Este projeto visa atender às necessidades da IF Diagnósticos, oferecendo um sistema flexível, reutilizável e de fácil manutenção para gerenciamento de exames médicos, emissão de laudos e comunicação com pacientes. A solução foi desenvolvida com foco na aplicação de padrões de projeto para garantir extensibilidade e desacoplamento entre os componentes do sistema.
 
+## Integrantes do Grupo
+
+| Nome               | Matrícula     |
+|--------------------|---------------|
+| Alessandro Rodrigues de Souza Júnior | 20231370009 |
+| Bruno Vinicius de Araujo Eneas | 20231370015 |
+| Caio Batista da Silva Soares | 20231370010 |
+| Douglas Emerson Ferreira Carneiro | 20231370002 |
+
+
 ## Estrutura da Solução
 
 A arquitetura do sistema foi construída com base em diversos padrões de projeto. Cada requisito funcional foi analisado individualmente e resolvido com um ou mais padrões que melhor se aplicam ao cenário descrito.
