@@ -27,7 +27,7 @@ Garante unicidade na geração dos números de exame, evitando conflitos, duplic
 
 ---
 
-## Requisito R3 - Emitir laudo dos seguintes exames: Hemograma, Ultrassonografia e Ressonância Magnética. Outros tipos poderão ser adicionados futuramente, como Tomografia, sem impacto no código já existente.
+## Requisito R3 - Emitir laudo dos seguintes exames: Hemograma, Ultrassonografia e Ressonância Magnética. Outros tipos de exames poderão surgir no futuro, como por exemplo a Tomografia. Os novos tipos de exames a serem adicionados não devem impactar o funcionamento do código já existente.
 
 **Padrão de Projeto Aplicado:** Factory Method
 
@@ -39,7 +39,7 @@ Desacopla a lógica de criação dos objetos, permitindo adicionar novos tipos d
 
 ---
 
-## Requisito R4 - Gerar laudos em diferentes formatos: Texto, HTML e PDF. Novos formatos, como JSON, poderão ser adicionados sem afetar o código existente.
+## Requisito R4 - Gerar laudos para diferentes exames, inicialmente nos formatos texto, HTML e PDF. Outros tipos de formato poderão surgir no futuro, como por exemplo o JSON. Os novos formatos de exames a serem adicionados não devem impactar o funcionamento do código já existente. Qualquer tipo de laudo deve ser gerado em seu formato específico, inclusive em PDF (utilize a API de sua preferência)
 
 **Padrão de Projeto Aplicado:** Bridge
 
@@ -51,7 +51,8 @@ Permite variar independentemente o conteúdo dos laudos e seu formato de saída.
 
 ---
 
-## Requisito R5 - Adicionar regras de validação específicas para cada tipo de exame, de forma extensível.
+## Requisito R5 - Adicionar as regras de validação de cada exame, de maneira extensível. A validação do Hemograma só analisa se os valores medidos não excedem 50% do valor máximo e do valor mínimo. Por exemplo, se para Hemoglobina os valores de referência são de 13.0 a 18.0 milhões/dl, os extremos não podem exceder 6.5 e 27 milhões/dl. No caso de uma ressonância magnética, há diferentes regras de validação que devem ser verificadas, não importando a ordem, como: (a) verificar a presença de implantes gerais.
+
 
 **Padrão de Projeto Aplicado:** Chain of Responsibility
 
@@ -63,7 +64,7 @@ Permite uma estrutura modular e flexível para validações. Novas regras podem 
 
 ---
 
-## Requisito R6 - Notificar o paciente por WhatsApp quando um laudo for emitido. Novos canais, como SMS ou E-mail, podem ser adicionados sem impacto no funcionamento atual.
+## Requisito R6 - Notificar o paciente quando um laudo for emitido (inserido no sistema), por WhatsApp. Outros mecanismos de notificação serão adicionados futuramente (e.g. SMS ou E-mail) e não devem impactar o funcionamento do código já existente. Qualquer tipo de notificação deve ser gerado de maneira real.
 
 **Padrão de Projeto Aplicado:** Observer
 
@@ -75,7 +76,7 @@ Facilita a adição de novos mecanismos de notificação sem alterar a lógica d
 
 ---
 
-## Requisito R7 - Aplicar descontos no custo do exame conforme políticas do laboratório.
+## Requisito R7 - O sistema deve permitir a realização de descontos para o custo de exames conforme política definida pelo laboratório. Inicialmente, serão concedidos descontos para convênio (15%) e desconto para idoso (8%). Outros tipos de descontos poderão surgir no futuro, como por exemplo, no mês de campanha do “Outubro Rosa” (prevenção de câncer de mama). Os novos tipos de exames a serem adicionados não devem impactar o funcionamento do código já existente.
 
 **Padrão de Projeto Aplicado:** Strategy
 
@@ -87,7 +88,7 @@ Encapsula políticas de desconto em componentes independentes e reutilizáveis. 
 
 ---
 
-## Requisito R8 - Priorizar exames com base em níveis de urgência: URGENTE, POUCO URGENTE e ROTINA.
+## Requisito R8 - Implementar a solução de priorização de exames usando fila de prioridade. As regras já foram indicadas anteriormente e considerar-se-á as prioridades URGENTE, POUCO URGENTE e ROTINA.
 
 ### Opção 1 - Priority Queue
 
@@ -111,7 +112,7 @@ Encapsula comportamentos específicos por prioridade, evitando condicionais espa
 
 ---
 
-## Requisito R9 - Implementar o programa principal que simule a execução da aplicação e os requisitos funcionais.
+## Requisito R9 - Implementar o programa principal que simule a execução da aplicação e atendimento de todos os requisitos funcionais.
 
 **Padrão de Projeto Aplicado:** Facade
 
